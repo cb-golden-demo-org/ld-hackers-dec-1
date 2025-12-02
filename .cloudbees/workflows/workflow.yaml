@@ -81,7 +81,8 @@ jobs:
         with:
           destination: 268150017804.dkr.ecr.us-east-1.amazonaws.com/hackers-organized:${{ cloudbees.scm.sha }}
           tar-path: container-image.tar
-          build-args: BUILDKIT_CONTEXT_KEEP_GIT_DIR=1,BUILDKIT_INLINE_CACHE=1 
+          build-args: BUILDKIT_CONTEXT_KEEP_GIT_DIR=1,BUILDKIT_INLINE_CACHE=1
+          artifact-name: hackers-organized 
       - name: Publish evidence
         uses: cloudbees-io/publish-evidence-item@v1
         with:
